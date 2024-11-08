@@ -66,5 +66,11 @@ ram.runtime = "50M"
     api.allowed = [ "visitors", "all_users" ]
     api.auth_header = false
 
+    opds.url = "/opds"
+    opds.show_tile = false
+    opds.protected = false
+    opds.allowed = [ "visitors", "all_users" ]
+    opds.auth_header = false
+
     [resources.apt]
     packages = "openjdk-17-jre"
