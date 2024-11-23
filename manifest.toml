@@ -5,7 +5,7 @@ name = "Komga"
 description.en = "Media server for your comics, manga and magazines"
 description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et magazines"
 
-version = "1.12.1~ynh3"
+version = "1.12.1~ynh4"
 
 maintainers = ["Navan Chauhan"]
 
@@ -17,7 +17,8 @@ admindoc = "https://komga.org/guides/"
 code = "https://github.com/gotson/komga"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.29"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
@@ -62,9 +63,15 @@ ram.runtime = "50M"
 
     api.url = "/api"
     api.show_tile = false
-    api.protected = false
+    api.protected = true
     api.allowed = [ "visitors", "all_users" ]
     api.auth_header = false
+
+    opds.url = "/opds"
+    opds.show_tile = false
+    opds.protected = false
+    opds.allowed = [ "visitors", "all_users" ]
+    opds.auth_header = false
 
     [resources.apt]
     packages = "openjdk-17-jre"
